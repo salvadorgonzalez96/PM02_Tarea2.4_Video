@@ -1,36 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarea24.Views;
+using PhotoApp.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-namespace Tarea24
+namespace PhotoApp
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
         public MainPage()
         {
             InitializeComponent();
-            new NavigationPage(new PageVideoRecord());
         }
 
         private async void btnAddVideo_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PageVideoRecord());
+            var AddPage = new PhotosView();
+
+            await Navigation.PushAsync(AddPage);
         }
 
         private async void btnViewVideos_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PageVideoList());
-        }
+            var ViewVideosPages = new ListVideoView();
 
+            await Navigation.PushAsync(ViewVideosPages);
+
+        }
+       
         private void btnPlay_Clicked(object sender, EventArgs e)
         {
 
-        }
+        } 
     }
 }

@@ -1,35 +1,34 @@
 ﻿using System;
-using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Tarea24.Controller;
-using Tarea24.Views;
+using PhotoApp.Views;
+using PhotoApp.Controllers;
+using System.IO;
 
-namespace Tarea24
+namespace PhotoApp
 {
     public partial class App : Application
     {
-
-        static VideoDBController BaseDatos;
-
-        public static VideoDBController BaseDatosObject
+        static Database database;
+        public static Database BaseDatos
         {
             get
             {
-                if (BaseDatos == null)
+                if (database == null)
                 {
-                    BaseDatos = new VideoDBController(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "VideosDBApp.db3"));
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PM02VideoApp.db3"));
                 }
-                return BaseDatos;
-            }
-        }
 
+                return database;
+            }
+
+
+        }
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
-
         }
 
         protected override void OnStart()

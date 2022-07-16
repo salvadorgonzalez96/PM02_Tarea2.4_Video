@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Tarea24.MainPage"
+             x:Class="PhotoApp.MainPage"
              Title="Tarea 2.4 PM2">
+
     <ContentPage.Content>
         <StackLayout>
             <Grid>
 
-                <Button BackgroundColor="#E6287A" Grid.Row="2" Grid.Column="0" Text="Elija una Opcion" TextColor="Black" Grid.ColumnSpan="2" IsEnabled="False"/>
+                <Button BackgroundColor="LightGray" Grid.Row="2" Grid.Column="0" Text="Elija una Opcion" TextColor="Black" Grid.ColumnSpan="2" IsEnabled="False"/>
 
                 <Button x:Name="btnAddVideo" Text="Grabar nuevo Video" Clicked="btnAddVideo_Clicked" Grid.Row="5" Grid.Column="0" Grid.RowSpan="2"></Button>
                 <Button x:Name="btnViewVideos" Text="Ver Videos" Clicked="btnViewVideos_Clicked" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
+    
 </ContentPage>
